@@ -1,21 +1,49 @@
-import { db } from 'hatchable';
-export const access='user';
-export const methods=['GET','POST'];
-async function profile(id){const q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[id]);return q.rows[0]||null;}
-export default async function(req,res){
- const me=await profile(req.user.id); if(!me||!me.active)return res.status(403).json({error:'Account is inactive or not registered. Sign in again to initialise your profile.'}); if(me.role==='manager'&&String(me.email||'').toLowerCase()!=='mahesh.s@hrhnext.com')return res.status(403).json({error:'Manager access is not authorised for this account.'});
- if(req.method==='GET'){
-  const target=me.role==='manager'&&req.query.agent?req.query.agent:me.user_id;
-  const from=req.query.from||'2000-01-01'; const to=req.query.to||'2099-12-31';
-  const q=await db.query('SELECT id,agent_user_id,work_date,calls_assigned,outbound_attempts,inbound_calls,connected_calls,qualified_leads,consultations_booked,whatsapp_shared,callbacks_scheduled,followups_completed,crm_updated,talk_time_minutes,notes,updated_at FROM daily_kpis WHERE agent_user_id=$1 AND work_date >= $2::date AND work_date <= $3::date ORDER BY work_date DESC',[target,from,to]);
-  return res.json({entries:q.rows,profile:me});
- }
- if(me.role!=='manager')return res.status(403).json({error:'Only the manager can update KPI records.'});
- const b=req.body||{}; const target=String(b.agent_user_id||''); const d=String(b.work_date||'');
- const agent=await profile(target); if(!agent||agent.role!=='agent')return res.status(400).json({error:'Select an active agent account.'});
- if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return res.status(400).json({error:'Enter a valid work date.'});
- const keys=['calls_assigned','outbound_attempts','inbound_calls','connected_calls','qualified_leads','consultations_booked','whatsapp_shared','callbacks_scheduled','followups_completed','crm_updated','talk_time_minutes'];
- const vals=keys.map(k=>Math.max(0,Number(b[k]||0))); if(vals.some(v=>!Number.isFinite(v)))return res.status(400).json({error:'KPI values must be numeric.'});
- const sql='INSERT INTO daily_kpis(agent_user_id,work_date,calls_assigned,outbound_attempts,inbound_calls,connected_calls,qualified_leads,consultations_booked,whatsapp_shared,callbacks_scheduled,followups_completed,crm_updated,talk_time_minutes,notes,updated_by) VALUES($1,$2::date,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) ON CONFLICT(agent_user_id,work_date) DO UPDATE SET calls_assigned=EXCLUDED.calls_assigned,outbound_attempts=EXCLUDED.outbound_attempts,inbound_calls=EXCLUDED.inbound_calls,connected_calls=EXCLUDED.connected_calls,qualified_leads=EXCLUDED.qualified_leads,consultations_booked=EXCLUDED.consultations_booked,whatsapp_shared=EXCLUDED.whatsapp_shared,callbacks_scheduled=EXCLUDED.callbacks_scheduled,followups_completed=EXCLUDED.followups_completed,crm_updated=EXCLUDED.crm_updated,talk_time_minutes=EXCLUDED.talk_time_minutes,notes=EXCLUDED.notes,updated_by=EXCLUDED.updated_by,updated_at=NOW() RETURNING id';
- const q=await db.query(sql,[target,d,...vals,String(b.notes||''),me.user_id]);res.json({ok:true,id:q.rows[0].id});
+import { methodNotAllowed, numericFields, requireUser, send, validDate } from './_lib/supabase.js';
+
+const fields = ['calls_assigned','outbound_attempts','inbound_calls','connected_calls','qualified_leads','consultations_booked','whatsapp_shared','callbacks_scheduled','followups_completed','crm_updated','talk_time_minutes'];
+
+export default async function handler(req, res) {
+  if (!['GET','POST'].includes(req.method)) return methodNotAllowed(res, ['GET','POST']);
+  const auth = await requireUser(req, res);
+  if (!auth) return;
+
+  if (req.method === 'GET') {
+    const from = req.query.from || '2000-01-01';
+    const to = req.query.to || '2099-12-31';
+    if (!validDate(from) || !validDate(to) || from > to) return send(res, 400, { error: 'Enter a valid date range.' });
+    const target = auth.isManager && req.query.agent ? String(req.query.agent) : auth.user.id;
+    const { data, error } = await auth.client.from('daily_kpis')
+      .select('id,agent_user_id,work_date,calls_assigned,outbound_attempts,inbound_calls,connected_calls,qualified_leads,consultations_booked,whatsapp_shared,callbacks_scheduled,followups_completed,crm_updated,talk_time_minutes,notes,updated_at')
+      .eq('agent_user_id', target).gte('work_date', from).lte('work_date', to).order('work_date', { ascending: false });
+    if (error) {
+      console.error('KPI read failed:', error);
+      return send(res, 500, { error: 'Unable to load KPI records.' });
+    }
+    return send(res, 200, { entries: data || [], profile: auth.profile });
+  }
+
+  if (!auth.isManager) return send(res, 403, { error: 'Only the authorised Manager can update KPI records.' });
+  const body = req.body || {}, target = String(body.agent_user_id || ''), date = String(body.work_date || '');
+  if (!target || !validDate(date)) return send(res, 400, { error: 'Select an agent and enter a valid work date.' });
+  let values;
+  try { values = numericFields(body, fields); }
+  catch (error) { return send(res, 400, { error: error.message }); }
+
+  const { data: agent, error: agentError } = await auth.client.from('agent_profiles')
+    .select('user_id,role,active').eq('user_id', target).maybeSingle();
+  if (agentError) return send(res, 500, { error: 'Unable to verify the selected agent.' });
+  if (!agent || agent.role !== 'agent' || !agent.active) return send(res, 400, { error: 'Select an active agent account.' });
+
+  const row = {
+    agent_user_id: target, work_date: date,
+    ...Object.fromEntries(fields.map((key, index) => [key, values[index]])),
+    notes: String(body.notes || '').slice(0, 2000), updated_by: auth.user.id,
+    updated_at: new Date().toISOString()
+  };
+  const { data, error } = await auth.client.from('daily_kpis').upsert(row, { onConflict: 'agent_user_id,work_date' }).select('id').single();
+  if (error) {
+    console.error('KPI save failed:', error);
+    return send(res, 500, { error: 'Unable to save the KPI record.' });
+  }
+  return send(res, 200, { ok: true, id: data.id });
 }
