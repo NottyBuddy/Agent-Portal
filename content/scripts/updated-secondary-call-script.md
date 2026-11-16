@@ -23,7 +23,7 @@
 
 * Do not guess technical specifications, delivery dates, structural approvals or other restricted information; hand over to the appropriate sales team. 
 
-- Execute the 9-attempt retry cycle over 12 days and log the exact disposition immediately. 
+- Execute a maximum of 15 call attempts across 9 calendar days. Use varied time slots and log the exact disposition immediately after every attempt. 
 
 * Post the customer phone number and tag the exact regional sales owner in the Daily Leads WhatsApp group after the call. 
 
@@ -184,7 +184,7 @@ Yes (Ready) / No (In Progress)  
 |   |
 | - |
 
-**Follow-up:** Set callback schedule (9 attempts over 12 days).  
+**Follow-up:** Set callback schedule (maximum 15 attempts over 9 calendar days: Day 1 = 3 attempts; Days 2–4 = 2 attempts per day; distribute the remaining 6 attempts across Days 5–9 in varied time slots).  
 
 |   |
 | - |
@@ -269,7 +269,7 @@ For unanswered calls, follow the mandatory retry of cadence before archiving the
 |   |
 | - |
 
-Execute a maximum of **9 call attempts across 12 calendar days**. 
+Execute a maximum of **15 call attempts across 9 calendar days**. Follow this cadence: **Day 1: 3 attempts** in varied time slots; **Days 2–4: 2 attempts per day**; distribute the **remaining 6 attempts across Days 5–9** in varied time slots. Log the exact disposition immediately after every attempt. If there is no response after all 15 attempts, update the CRM disposition to **Lost – No Response**. 
 
 **CRM STAGE CLASSIFICATION & HANDOVER MATRIX** 
 
