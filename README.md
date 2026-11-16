@@ -1,56 +1,58 @@
 # IndiFrame Agent Help Centre
 
-## Current source baseline
+## Source of truth
 
-The existing application is preserved in this repository. Continue from the current source; do not rebuild the product from scratch.
+This GitHub repository is the sole source of truth for the application. Continue from the existing codebase; do not rebuild the product from scratch.
 
 ### Existing modules
 - Command Centre overview
-- Full inbound and outbound script libraries currently embedded in `public/app.js`
+- Full inbound and outbound script libraries embedded in `public/app.js`
 - Objection Lab, FAQ Knowledge Bank, Product Quick Reference and Weekly Knowledge Quiz
 - Manager Studio and Agent KPI dashboard
 - Daily Performance Leaderboard
 - AI Call Simulation
 - Automated Coaching Centre
 
-### Current access-control baseline
+### Access-control baseline
 - The authorised Manager email is `mahesh.s@hrhnext.com`.
 - Other registered users are assigned the Agent role.
 - Manager-only team and KPI write operations are checked by API handlers.
 - Inactive accounts are blocked by the protected API handlers.
 - Keep role checks on the server; hiding Manager UI elements is not sufficient security.
 
-## GitHub runtime migration
+## Runtime architecture
 
-**Source control:** GitHub only. All application source, SQL migrations, deployment workflows and configuration templates must be committed here. Do not make further changes or deployments through Hatchable.
+**Provider configuration and deployment are pending.**
 
-**Target runtime architecture (provider configuration and deployment pending):**
 - Source control: GitHub
 - Frontend hosting and Node.js serverless APIs: Vercel
 - Authentication and PostgreSQL: Supabase Auth + Supabase Database
 - AI: OpenAI Responses API called only from the server
 - CI: GitHub Actions
 
-### Migration implementation status
+All application source, SQL migrations, deployment workflows and configuration templates must be committed to this repository. No external visual app builder or alternate source platform is part of the runtime architecture.
 
-The `supabase-schema-foundation` branch now contains:
+## Migration implementation status
+
+The `supabase-schema-foundation` branch contains:
 - Supabase Auth browser wrapper using email OTP; passkey sign-in is not included in this first migration.
 - Server-side JWT verification and Manager/Agent allowlist enforcement in `api/_lib/supabase.js`.
 - Supabase-compatible `/api/me`, `/api/kpi`, `/api/team` and `/api/insights` endpoints.
 - Server-side AI simulation using the OpenAI Responses API. The API key and model are read from server environment variables.
 - Supabase schema + RLS migration at `supabase/migrations/202611160001_initial_schema.sql`.
 - Vercel configuration, environment-variable template, GitHub Actions syntax workflow and JavaScript syntax-check script.
-- Browser API calls now attach the Supabase access token.
+- Browser API calls attach the Supabase access token.
 
-### Remaining blockers and acceptance tests
+## Remaining blockers and acceptance tests
+
 1. Create/select a dedicated Supabase project and set `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` in Vercel.
 2. Review and apply the Supabase migration only to the intended new project; configure Supabase email OTP delivery and the email template to display the one-time code.
 3. Set `OPENAI_API_KEY` and `OPENAI_MODEL` in Vercel. The selected model must support the Responses API and JSON output.
 4. Confirm Vercel project settings, deployment and production domain. No deployment has been performed from this branch.
-5. Run Manager, Agent, inactive-account, team scope, KPI write, quiz, leaderboard, AI turn/evaluation and script-library acceptance tests.
-6. Review remaining Hatchable-specific configuration in `hatchable.toml`; keep the old production deployment untouched until all tests pass.
+5. Run Manager, Agent, inactive-account, team scope, KPI write, quiz, leaderboard, AI turn/evaluation and full script-library acceptance tests.
 
-### Required Vercel environment variables
+## Required Vercel environment variables
+
 - `SUPABASE_URL`
 - `SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY` (server-only secret)
@@ -63,9 +65,8 @@ Use `.env.example` as a variable-name reference only. Never commit real values.
 
 - Do not change customer data or invent approved pricing, warranty, delivery, serviceability or technical commitments.
 - Do not weaken protected-account restrictions or Manager authorization.
-- Keep the existing Hatchable deployment untouched until the replacement has passed acceptance testing.
 - Never commit API keys, database passwords, service-role keys or AI provider secrets.
-
+- Preserve the complete approved script library, including all language variants; do not replace full scripts with summaries or truncated previews.
 
 ## Supabase schema foundation (prepared, not applied)
 
@@ -75,11 +76,7 @@ It defines UUID-based references to Supabase Auth, the existing profile/KPI/quiz
 
 **Status:** SQL file committed to the `supabase-schema-foundation` branch for review. It has not been run against a Supabase project. Do not connect production or migrate live data until the SQL is reviewed, a dedicated Supabase project is selected, and the API conversion and acceptance tests are ready.
 
-
-**Latest validation note:** GitHub Actions JavaScript syntax checks passed on the initial backend migration commit. The login page HTML was subsequently repaired on this branch; the CI workflow should be rerun against the latest branch head before deployment.
-
-
-### GitHub-driven Vercel deployment
+## GitHub-driven Vercel deployment
 
 A production deployment workflow is prepared at `.github/workflows/deploy-vercel.yml`. It runs only after a push to `main` or a manual workflow dispatch; it does not deploy this feature branch automatically.
 
