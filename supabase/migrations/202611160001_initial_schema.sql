@@ -1,6 +1,5 @@
 -- Supabase foundation for IndiFrame Agent Command Centre.
 -- Apply only to a dedicated Supabase project after reviewing the target project.
--- This migration does not alter the existing Hatchable database.
 
 begin;
 
