@@ -29,6 +29,15 @@ export default async function handler(req, res) {
   try { values = numericFields(body, fields); }
   catch (error) { return send(res, 400, { error: error.message }); }
 
+  // Operational counts must be whole numbers; only talk time may be fractional.
+  const countValues = values.slice(0, -1);
+  if (countValues.some(value => !Number.isSafeInteger(value))) {
+    return send(res, 400, { error: 'Call and activity counts must be whole numbers.' });
+  }
+  if (typeof body.notes !== 'undefined' && typeof body.notes !== 'string') {
+    return send(res, 400, { error: 'Manager notes must be plain text.' });
+  }
+
   const { data: agent, error: agentError } = await auth.client.from('agent_profiles')
     .select('user_id,role,active').eq('user_id', target).maybeSingle();
   if (agentError) return send(res, 500, { error: 'Unable to verify the selected agent.' });
