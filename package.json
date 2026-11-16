@@ -7,7 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "check": "node --check api/config.js && node --check api/me.js && node --check api/kpi.js && node --check api/team.js && node --check api/insights.js && node --check api/simulate.js && node --check api/_lib/supabase.js && node --check public/auth.js && node --check public/app.js && node --check public/advanced.js"
+    "check": "node --check api/_lib/quiz.js && node --check api/config.js && node --check api/me.js && node --check api/kpi.js && node --check api/team.js && node --check api/insights.js && node --check api/simulate.js && node --check api/_lib/supabase.js && node --check public/auth.js && node --check public/app.js && node --check public/advanced.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.0"
