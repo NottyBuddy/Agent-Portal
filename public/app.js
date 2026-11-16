@@ -30,7 +30,9 @@ async function scriptLibraryPage(){
   {title:'Updated / Secondary Call Script',file:'/knowledge/updated-secondary-call-script.md',label:'SECONDARY SCRIPT'},
   {title:'FAQ Bank',file:'/knowledge/faq-bank.md',label:'CUSTOMER FAQ'},
   {title:'Brand & Product SOP',file:'/knowledge/brand-and-product-sop.md',label:'INTERNAL SOP'},
-  {title:'Product Catalogue / Company Brochure',file:'/knowledge/product-catalogue.md',label:'PRODUCT REFERENCE'}
+  {title:'Product Catalogue / Company Brochure',file:'/knowledge/product-catalogue.md',label:'PRODUCT REFERENCE'},
+  {title:'Final Script — Roman Hindi (Part 1: Sections 1–5)',file:'/knowledge/roman-hindi-final-script-part-1.md',label:'ROMAN HINDI'},
+  {title:'Final Script — Roman Telugu (Part 1: Sections 1–5)',file:'/knowledge/roman-telugu-final-script-part-1.md',label:'ROMAN TELUGU'}
  ];
  const loaded=await Promise.all(docs.map(async d=>{const r=await fetch(d.file,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+d.title);return {...d,text:await r.text()}}));
  window.__scriptDocs=loaded;
