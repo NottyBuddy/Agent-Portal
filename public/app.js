@@ -39,6 +39,8 @@ async function scriptLibraryPage(){
   {title:'Final Script — Roman Telugu (Part 3: Sections 11–18)',file:'/knowledge/roman-telugu-final-script-part-3.md',label:'ROMAN TELUGU'}
 ,  {title:'Updated / Secondary Script — Roman Hindi (Complete)',file:'/knowledge/updated-secondary-roman-hindi.md',label:'UPDATED SECONDARY · ROMAN HINDI'},
   {title:'Updated / Secondary Script — Roman Telugu (Complete)',file:'/knowledge/updated-secondary-roman-telugu.md',label:'UPDATED SECONDARY · ROMAN TELUGU'}
+,  {title:'FAQ & Conversational Guide — Roman Hindi (Complete)',file:'/knowledge/faq-bank-roman-hindi.md',label:'FAQ BANK · ROMAN HINDI'},
+  {title:'FAQ & Conversational Guide — Roman Telugu (Complete)',file:'/knowledge/faq-bank-roman-telugu.md',label:'FAQ BANK · ROMAN TELUGU'}
  ];
  const loaded=await Promise.all(docs.map(async d=>{const r=await fetch(d.file,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+d.title);return {...d,text:await r.text()}}));
  window.__scriptDocs=loaded;
