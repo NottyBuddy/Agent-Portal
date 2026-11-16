@@ -1,6 +1,23 @@
-{
-    "path": "api/me.js",
-    "text": "import { db } from 'hatchable';\nexport const access = 'user';\nexport const methods = ['GET','POST'];\nexport default async function(req,res){\n const u=req.user;\n let q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);\n if(!q.rows.length){\n  const n=await db.query('SELECT COUNT(*)::int AS n FROM agent_profiles');\n  const role=n.rows[0].n===0?'manager':'agent';\n  await db.query('INSERT INTO agent_profiles(user_id,email,display_name,role) VALUES($1,lower($2),$3,$4) ON CONFLICT(user_id) DO NOTHING',[u.id,u.email||'',u.name||'',role]);\n  q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);\n }\n if(req.method==='POST'){\n  const name=String((req.body||{}).display_name||'').trim().slice(0,80);\n  if(!name)return res.status(400).json({error:'Enter a display name.'});\n  await db.query('UPDATE agent_profiles SET display_name=$2 WHERE user_id=$1',[u.id,name]);\n  q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);\n }\n res.json({profile:q.rows[0]});\n}",
-    "hash": "ba2658462ac6ea1c4662c1d5a2de1edeb3ec21c79ccb1d39c5c545b87cebf117",
-    "total_lines": 20
+import { db } from 'hatchable';
+export const access = 'user';
+export const methods = ['GET','POST'];
+const MANAGER_EMAILS = new Set(['mahesh.s@hrhnext.com']);
+export default async function(req,res){
+ const u=req.user;
+ const email=String(u.email||'').trim().toLowerCase();
+ const role=MANAGER_EMAILS.has(email)?'manager':'agent';
+ let q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);
+ if(!q.rows.length){
+  await db.query('INSERT INTO agent_profiles(user_id,email,display_name,role) VALUES($1,$2,$3,$4) ON CONFLICT(user_id) DO NOTHING',[u.id,email,u.name||'',role]);
+ } else if(q.rows[0].role!==role || q.rows[0].email!==email){
+  await db.query('UPDATE agent_profiles SET email=$2,role=$3 WHERE user_id=$1',[u.id,email,role]);
+ }
+ q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);
+ if(req.method==='POST'){
+  const name=String((req.body||{}).display_name||'').trim().slice(0,80);
+  if(!name)return res.status(400).json({error:'Enter a display name.'});
+  await db.query('UPDATE agent_profiles SET display_name=$2 WHERE user_id=$1',[u.id,name]);
+  q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[u.id]);
+ }
+ res.json({profile:q.rows[0]});
 }
