@@ -1,22 +1,109 @@
-import { db } from 'hatchable';
-export const access='user';
-export const methods=['GET','POST'];
-async function profile(id){const q=await db.query('SELECT user_id,email,display_name,role,active FROM agent_profiles WHERE user_id=$1',[id]);return q.rows[0]||null;}
-export default async function(req,res){
- const me=await profile(req.user.id);if(!me||!me.active)return res.status(403).json({error:'Account is inactive or not registered. Sign in again to initialise your profile.'});if(me.role==='manager'&&String(me.email||'').toLowerCase()!=='mahesh.s@hrhnext.com')return res.status(403).json({error:'Manager access is not authorised for this account.'});
- if(req.method==='POST'){
-  const b=req.body||{};const score=Math.max(0,Math.min(100,Number(b.score||0)));const total=Math.max(1,Math.min(50,Number(b.total||1)));
-  if(!Number.isFinite(score)||!Number.isFinite(total))return res.status(400).json({error:'Invalid quiz score.'});
-  await db.query('INSERT INTO quiz_attempts(user_id,quiz_date,score,total,answers) VALUES($1,CURRENT_DATE,$2,$3,$4::jsonb)',[me.user_id,score,total,JSON.stringify(Array.isArray(b.answers)?b.answers.slice(0,50):[])]);
-  return res.json({ok:true});
- }
- const target=(me.role==='manager'||req.query.view==='leaderboard')?'%':me.user_id;
- const quizTarget=me.role==='manager'?'%':me.user_id;
- const dateFilter=req.query.view==='leaderboard'?'d.work_date=CURRENT_DATE':"d.work_date>=CURRENT_DATE-INTERVAL '29 days'";
- const k=await db.query(`SELECT p.user_id,p.display_name,p.email,COALESCE(SUM(d.outbound_attempts+d.inbound_calls),0)::int AS attempts,COALESCE(SUM(d.connected_calls),0)::int AS connected,COALESCE(SUM(d.qualified_leads),0)::int AS qualified,COALESCE(SUM(d.consultations_booked),0)::int AS consultations,COALESCE(SUM(d.followups_completed+d.crm_updated+d.whatsapp_shared),0)::int AS productive_actions,COALESCE(SUM(d.talk_time_minutes),0)::numeric AS talk_minutes FROM agent_profiles p LEFT JOIN daily_kpis d ON d.agent_user_id=p.user_id AND ${dateFilter} WHERE p.role='agent' AND p.active=true AND ($1='%' OR p.user_id=$1) GROUP BY p.user_id,p.display_name,p.email ORDER BY p.display_name`,[target]);
- const q=await db.query(`SELECT user_id,AVG(score::numeric/NULLIF(total,0))*100 AS avg_score,COUNT(*)::int AS quiz_count,MAX(quiz_date) AS last_quiz FROM quiz_attempts WHERE quiz_date>=CURRENT_DATE-INTERVAL '29 days' AND ($1='%' OR user_id=$1) GROUP BY user_id`,[quizTarget]);
- const quiz=Object.fromEntries(q.rows.map(x=>[x.user_id,x]));
- const sim=await db.query(`SELECT user_id,AVG(score)::numeric AS avg_score,COUNT(*)::int AS sim_count,MAX(created_at) AS last_sim FROM simulation_attempts WHERE created_at>=NOW()-INTERVAL '29 days' AND ($1='%' OR user_id=$1) GROUP BY user_id`,[quizTarget]);
- const simByUser=Object.fromEntries(sim.rows.map(x=>[x.user_id,x]));
- return res.json({role:me.role,rows:k.rows.map(x=>({...x,connect_rate:Number(x.attempts)?Number(x.connected)/Number(x.attempts)*100:0,quiz_score:quiz[x.user_id]?Number(quiz[x.user_id].avg_score):null,quiz_count:quiz[x.user_id]?.quiz_count||0,last_quiz:quiz[x.user_id]?.last_quiz||null,sim_score:simByUser[x.user_id]?Number(simByUser[x.user_id].avg_score):null,sim_count:simByUser[x.user_id]?.sim_count||0,last_sim:simByUser[x.user_id]?.last_sim||null}))});
+import { methodNotAllowed, requireUser, send } from './_lib/supabase.js';
+import { gradeQuizAnswers } from './_lib/quiz.js';
+
+const DAY_MS = 86400000;
+function isoDate(date) { return date.toISOString().slice(0, 10); }
+
+export default async function handler(req, res) {
+  if (!['GET','POST'].includes(req.method)) return methodNotAllowed(res, ['GET','POST']);
+  const auth = await requireUser(req, res);
+  if (!auth) return;
+
+  if (req.method === 'POST') {
+    const body = req.body || {};
+    const graded = gradeQuizAnswers(body.answers);
+    if (graded.error) return send(res, 400, { error: graded.error });
+    const { score, total, answers } = graded;
+    const { error } = await auth.client.from('quiz_attempts').insert({
+      user_id: auth.user.id, quiz_date: isoDate(new Date()), score, total, answers
+    });
+    if (error) {
+      console.error('Quiz save failed:', error);
+      return send(res, 500, { error: 'Unable to save the quiz result.' });
+    }
+    return send(res, 200, { ok: true });
+  }
+
+  const leaderboard = req.query.view === 'leaderboard';
+  const now = new Date();
+  const since = new Date(now.getTime() - 29 * DAY_MS);
+  const dateFrom = leaderboard ? isoDate(now) : isoDate(since);
+  let profilesQuery = auth.client.from('agent_profiles')
+    .select('user_id,email,display_name')
+    .eq('role', 'agent').eq('active', true)
+    .order('display_name', { ascending: true });
+
+  if (!auth.isManager && !leaderboard) profilesQuery = profilesQuery.eq('user_id', auth.user.id);
+  const { data: profiles, error: profilesError } = await profilesQuery;
+  if (profilesError) {
+    console.error('Insights profile read failed:', profilesError);
+    return send(res, 500, { error: 'Unable to load coaching profiles.' });
+  }
+  const ids = (profiles || []).map(p => p.user_id);
+  if (!ids.length) return send(res, 200, { role: auth.profile.role, rows: [] });
+
+  const [kpiResult, quizResult, simResult] = await Promise.all([
+    auth.client.from('daily_kpis')
+      .select('agent_user_id,work_date,outbound_attempts,inbound_calls,connected_calls,qualified_leads,consultations_booked,followups_completed,crm_updated,whatsapp_shared,talk_time_minutes')
+      .in('agent_user_id', ids).gte('work_date', dateFrom).lte('work_date', isoDate(now)),
+    auth.client.from('quiz_attempts')
+      .select('user_id,score,total,quiz_date')
+      .in('user_id', ids).gte('quiz_date', isoDate(since)),
+    auth.client.from('simulation_attempts')
+      .select('user_id,score,created_at')
+      .in('user_id', ids).gte('created_at', since.toISOString())
+  ]);
+
+  for (const result of [kpiResult, quizResult, simResult]) {
+    if (result.error) {
+      console.error('Insights data read failed:', result.error);
+      return send(res, 500, { error: 'Unable to load performance insights.' });
+    }
+  }
+
+  const byId = new Map(ids.map(id => [id, {
+    attempts: 0, connected: 0, qualified: 0, consultations: 0,
+    productive_actions: 0, talk_minutes: 0
+  }]));
+  for (const row of kpiResult.data || []) {
+    const x = byId.get(row.agent_user_id);
+    if (!x) continue;
+    x.attempts += Number(row.outbound_attempts || 0) + Number(row.inbound_calls || 0);
+    x.connected += Number(row.connected_calls || 0);
+    x.qualified += Number(row.qualified_leads || 0);
+    x.consultations += Number(row.consultations_booked || 0);
+    x.productive_actions += Number(row.followups_completed || 0) + Number(row.crm_updated || 0) + Number(row.whatsapp_shared || 0);
+    x.talk_minutes += Number(row.talk_time_minutes || 0);
+  }
+
+  const quizById = new Map();
+  for (const row of quizResult.data || []) {
+    const x = quizById.get(row.user_id) || { points: 0, total: 0, count: 0, last: null };
+    x.points += Number(row.score || 0);
+    x.total += Number(row.total || 0);
+    x.count += 1;
+    if (!x.last || row.quiz_date > x.last) x.last = row.quiz_date;
+    quizById.set(row.user_id, x);
+  }
+  const simById = new Map();
+  for (const row of simResult.data || []) {
+    const x = simById.get(row.user_id) || { points: 0, count: 0, last: null };
+    x.points += Number(row.score || 0);
+    x.count += 1;
+    if (!x.last || row.created_at > x.last) x.last = row.created_at;
+    simById.set(row.user_id, x);
+  }
+
+  const rows = (profiles || []).map(p => {
+    const k = byId.get(p.user_id), q = quizById.get(p.user_id), s = simById.get(p.user_id);
+    return {
+      user_id: p.user_id, display_name: p.display_name, ...(auth.isManager ? { email: p.email } : {}),
+      ...k, connect_rate: k.attempts ? k.connected / k.attempts * 100 : 0,
+      quiz_score: q && q.total ? q.points / q.total * 100 : null,
+      quiz_count: q?.count || 0, last_quiz: q?.last || null,
+      sim_score: s && s.count ? s.points / s.count : null,
+      sim_count: s?.count || 0, last_sim: s?.last || null
+    };
+  });
+  return send(res, 200, { role: auth.profile.role, rows });
 }
