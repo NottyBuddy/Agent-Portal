@@ -1,5 +1,13 @@
 import { methodNotAllowed, requireUser, send, supabaseAdmin } from './_lib/supabase.js';
 
+const rubric = [
+  { name: 'Empathy and call control', max: 20 },
+  { name: 'Discovery and clarification', max: 20 },
+  { name: 'Accuracy and policy compliance', max: 30 },
+  { name: 'Objection handling', max: 15 },
+  { name: 'Clear next step and closure', max: 15 }
+];
+
 const scenarios = {
   price: { name:'Price objection', context:'You are a cautious homeowner. You have a lower quotation from a local fabricator and believe all uPVC windows are the same. Challenge vague claims and ask for an immediate discount.' },
   serviceability: { name:'Unserviceable location', context:'You are a customer outside the direct installation network. You want a firm commitment before sharing details. Challenge vague handovers and ask exactly who will install.' },
@@ -85,13 +93,19 @@ When mode is evaluate, return JSON: {"score":0,"criteria":[{"name":"Empathy and 
     }
 
     const criteria = Array.isArray(data.criteria) ? data.criteria : [];
-    const validCriteria = criteria.length === 5 && criteria.every(c =>
-      typeof c.name === 'string' && Number.isFinite(Number(c.score)) &&
-      Number.isFinite(Number(c.max)) && Number(c.score) >= 0 && Number(c.score) <= Number(c.max)
+    const validCriteria = criteria.length === rubric.length && criteria.every((c, index) =>
+      c && c.name === rubric[index].name &&
+      Number.isInteger(Number(c.score)) &&
+      Number(c.max) === rubric[index].max &&
+      Number(c.score) >= 0 && Number(c.score) <= rubric[index].max &&
+      typeof c.feedback === 'string'
     );
     if (!validCriteria) return send(res, 502, { error: 'AI returned an invalid scoring rubric. Please retry.' });
 
-    const score = Math.max(0, Math.min(100, Math.round(Number(data.score) || 0)));
+    if (!Number.isInteger(Number(data.score)) || Number(data.score) < 0 || Number(data.score) > 100) {
+      return send(res, 502, { error: 'AI returned an invalid total score. Please retry.' });
+    }
+    const score = Number(data.score);
     const criteriaTotal = criteria.reduce((sum, c) => sum + Math.round(Number(c.score)), 0);
     if (criteriaTotal !== score || criteria.reduce((sum, c) => sum + Number(c.max), 0) !== 100) {
       return send(res, 502, { error: 'AI returned inconsistent evaluation scores. Please retry.' });
