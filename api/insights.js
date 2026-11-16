@@ -1,4 +1,5 @@
 import { methodNotAllowed, requireUser, send } from './_lib/supabase.js';
+import { gradeQuizAnswers } from './_lib/quiz.js';
 
 const DAY_MS = 86400000;
 function isoDate(date) { return date.toISOString().slice(0, 10); }
@@ -10,11 +11,9 @@ export default async function handler(req, res) {
 
   if (req.method === 'POST') {
     const body = req.body || {};
-    const score = Number(body.score), total = Number(body.total);
-    if (!Number.isInteger(score) || !Number.isInteger(total) || total < 1 || total > 50 || score < 0 || score > total) {
-      return send(res, 400, { error: 'Invalid quiz score.' });
-    }
-    const answers = Array.isArray(body.answers) ? body.answers.slice(0, 50) : [];
+    const graded = gradeQuizAnswers(body.answers);
+    if (graded.error) return send(res, 400, { error: graded.error });
+    const { score, total, answers } = graded;
     const { error } = await auth.client.from('quiz_attempts').insert({
       user_id: auth.user.id, quiz_date: isoDate(new Date()), score, total, answers
     });
