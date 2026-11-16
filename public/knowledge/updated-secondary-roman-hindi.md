@@ -1,7 +1,7 @@
 # Updated / Secondary Call Script — Roman Hindi
 **Complete translated agent reference | Sections 1–18**
 
-> **Policy control:** Current unanswered-lead cadence is maximum **15 attempts across 9 calendar days**. The source document also contains an obsolete 9-attempt/12-day rule; that legacy instruction is not current and must not be followed. Day 1: 3 attempts in varied slots; Days 2–4: 2 attempts per day; remaining attempts across Days 5–9 in varied slots. Log the exact disposition after every attempt.
+> **Policy control:** Current unanswered-lead cadence is maximum **15 attempts across 9 calendar days**. Day 1: 3 attempts in varied slots; Days 2–4: 2 attempts per day; remaining 6 attempts across Days 5–9 in varied slots. Log the exact disposition after every attempt. If all 15 attempts are unanswered, update CRM as **Lost – No Response**.
 >
 > **Company identity:** IndiFrame aur Green Fortune ko ek hi company ke roop mein present karein. “Green Fortune partner fabricator” na kahein. Direct installation coverage se bahar hone par approved Green Fortune/local team routing confirm karein.
 >
@@ -38,7 +38,7 @@ Capture: Residential/Commercial/Villa/Apartment; area + PIN code and serviceabil
 - **C6 — Lost:** Specific loss reason CRM mein record karein, status Lost karein aur applicable ho to long-term nurture/feedback follow-up schedule karein.
 - **Pricing:** uPVC ke liye approved starting reference sirf “₹450 per sq. ft. onwards + applicable GST” hai. Custom calculation, single-window estimate ya unauthorized discount nahi dena. Aluminium pricing, specification aur timeline Sales ko route karein.
 - **Warranty:** Source reference mein 15-year profile, 5-year hardware aur 7-year colour warranty diya hai. Customer ko current written warranty/terms confirm karne ke liye Sales se verify karayein; exclusions ya unsupported terms invent na karein.
-- **Retry cadence:** Maximum 15 attempts / 9 calendar days, varied time slots, exact disposition after each attempt. Day 1: 3; Days 2–4: 2 per day; balance attempts Days 5–9 mein. Customer unreachable ho to attempts complete hone ke baad policy ke mutabik disposition update karein.
+- **Retry cadence:** Maximum 15 attempts / 9 calendar days, varied time slots, exact disposition after each attempt. Day 1: 3; Days 2–4: 2 per day; remaining 6 attempts Days 5–9 mein alag-alag time slots par complete karein. Har attempt ke baad exact disposition log karein. 15 attempts ke baad bhi response na mile to CRM mein **Lost – No Response** update karein.
 
 ## 4. Customer Brand Awareness & uPVC Explanation
 **Customer IndiFrame ko nahi jaanta:**
@@ -350,7 +350,7 @@ Never close with only “Okay, hamari team contact karegi.” Confirm: **Require
 - C2: Daily Leads WhatsApp Group mein contact details post karein aur Regional Sales Owner tag karein.
 - C1: Project/plastering readiness date ke basis par CRM follow-up schedule karein.
 - C7: Approved Green Fortune/local team route verify karein aur C7 / ROUTE TO B2F log karein.
-- Unanswered calls: maximum 15 attempts over 9 calendar days; har attempt ke baad exact disposition log karein.
+- Unanswered calls: maximum 15 attempts over 9 calendar days; Day 1: 3 attempts, Days 2–4: 2 attempts per day, remaining 6 attempts Days 5–9 mein. Har attempt ke baad exact disposition log karein. No response after all 15 attempts: **Lost – No Response**.
 - Protected accounts (Nikunj Mehta, Nayan Panchal, Sushant Gosh, Ravi Boliipogu) ko outbound dial/qualify na karein.
 
 **Lost / closed reasons:** Not Interested; Wrong Number; Wrong Lead; Duplicate Lead; Already Purchased; Competitor Selected; Project Cancelled; Project Postponed; Budget Issue; Price Too High; Location Not Serviceable; No Requirement; Customer Unreachable.

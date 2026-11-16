@@ -1,7 +1,7 @@
 # Updated / Secondary Call Script — Roman Telugu
 **Complete translated agent reference | Sections 1–18**
 
-> **Policy control:** Prastuta unanswered-lead cadence maximum **9 calendar days lo 15 attempts**. Source document lo unna paata 9 attempts / 12 days rule ippudu valid kaadu; daanini follow avvakandi. Day 1: different time slots lo 3 attempts; Days 2–4: rojuki 2 attempts; migilina attempts Days 5–9 lo different time slots lo complete cheyyali. Prathi attempt taruvata exact disposition log cheyyali.
+> **Policy control:** Prastuta unanswered-lead cadence maximum **9 calendar days lo 15 attempts**. Day 1: different time slots lo 3 attempts; Days 2–4: rojuki 2 attempts; migilina 6 attempts Days 5–9 lo different time slots lo complete cheyyali. Prathi attempt taruvata exact disposition log cheyyali. 15 attempts taruvata kuda response lekapothe CRM lo **Lost – No Response** update cheyyali.
 >
 > **Company identity:** IndiFrame mariyu Green Fortune oke company ga present cheyyali. “Green Fortune partner fabricator” ani cheppakandi. Direct installation coverage bayata unte approved Green Fortune/local team routing confirm cheyyandi.
 >
@@ -38,7 +38,7 @@ Capture cheyyalsina details: Residential/Commercial/Villa/Apartment; area + PIN 
 - **C6 — Lost:** Specific loss reason CRM lo record chesi status Lost cheyyandi. Applicable ayithe long-term nurture/feedback follow-up schedule cheyyandi.
 - **Pricing:** uPVC ki approved starting reference “₹450 per sq. ft. onwards + applicable GST” matrame. Custom calculation, single-window estimate, unauthorized discount ivvakandi. Aluminium pricing/specification/timeline Sales team ki route cheyyandi.
 - **Warranty:** Source reference lo 15-year profile, 5-year hardware, 7-year colour warranty unnayi. Current written warranty/terms Sales tho verify cheyyamani customer ki cheppandi. Exclusions leda unsupported terms invent cheyyakandi.
-- **Retry cadence:** Maximum 9 calendar days lo 15 attempts; different time slots; prathi attempt taruvata exact disposition. Day 1: 3; Days 2–4: rojuki 2; remaining attempts Days 5–9 lo. Attempts complete ayyaka policy prakaram disposition update cheyyandi.
+- **Retry cadence:** Maximum 9 calendar days lo 15 attempts; different time slots; prathi attempt taruvata exact disposition. Day 1: 3; Days 2–4: rojuki 2; remaining 6 attempts Days 5–9 lo different time slots lo complete cheyyandi. Prathi attempt taruvata exact disposition log cheyyandi. 15 attempts taruvata response lekapothe CRM lo **Lost – No Response** update cheyyandi.
 
 ## 4. Customer Brand Awareness & uPVC Explanation
 **Customer ki IndiFrame gurinchi teliyakapotey:**
@@ -350,7 +350,7 @@ Visit date/time mariyu current availability confirm cheyyandi.
 - C2: Daily Leads WhatsApp Group lo contact details post chesi Regional Sales Owner ni tag cheyyandi.
 - C1: Project/plastering readiness date batti CRM follow-up schedule cheyyandi.
 - C7: Approved Green Fortune/local team route verify chesi C7 / ROUTE TO B2F log cheyyandi.
-- Unanswered calls: 9 calendar days lo maximum 15 attempts; prathi attempt taruvata exact disposition log cheyyandi.
+- Unanswered calls: 9 calendar days lo maximum 15 attempts; Day 1: 3 attempts, Days 2–4: rojuki 2 attempts, migilina 6 attempts Days 5–9 lo. Prathi attempt taruvata exact disposition log cheyyandi. 15 attempts taruvata response lekapothe **Lost – No Response** update cheyyandi.
 - Protected accounts (Nikunj Mehta, Nayan Panchal, Sushant Gosh, Ravi Boliipogu) ki outbound dial/qualify cheyyakandi.
 
 **Lost / closed reasons:** Not Interested; Wrong Number; Wrong Lead; Duplicate Lead; Already Purchased; Competitor Selected; Project Cancelled; Project Postponed; Budget Issue; Price Too High; Location Not Serviceable; No Requirement; Customer Unreachable.
