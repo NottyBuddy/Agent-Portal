@@ -98,7 +98,7 @@ export default async function handler(req, res) {
   const rows = (profiles || []).map(p => {
     const k = byId.get(p.user_id), q = quizById.get(p.user_id), s = simById.get(p.user_id);
     return {
-      user_id: p.user_id, display_name: p.display_name, email: p.email,
+      user_id: p.user_id, display_name: p.display_name, ...(auth.isManager ? { email: p.email } : {}),
       ...k, connect_rate: k.attempts ? k.connected / k.attempts * 100 : 0,
       quiz_score: q && q.total ? q.points / q.total * 100 : null,
       quiz_count: q?.count || 0, last_quiz: q?.last || null,
