@@ -1,6 +1,0 @@
-{
-    "path": "hatchable.toml",
-    "text": "[auth]\nenabled = true\nproviders = [\"email\"]\n\n[ai]\nrequired = true\ndescription = \"Powers live AI customer role-play and individual call coaching evaluations.\"\n\n# All reads/writes to shared team and KPI records are performed only through\n# authenticated API handlers that enforce manager/agent scope in SQL.\n[db.tables.agent_profiles]\nread = \"public\"\nwrite = \"public\"\n\n[db.tables.daily_kpis]\nread = \"public\"\nwrite = \"public\"\n\n[db.tables.quiz_attempts]\nread = \"public\"\nwrite = \"public\"\n\n[db.tables.simulation_attempts]\nread = \"public\"\nwrite = \"public\"",
-    "hash": "9764e4b677e382bcdc289fbabbbc7dfb38849c61f26569c3eba8889a180a2c96",
-    "total_lines": 25
-}
