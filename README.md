@@ -24,32 +24,40 @@ The existing application is preserved in this repository. Continue from the curr
 
 **Source control:** GitHub only. All application source, SQL migrations, deployment workflows and configuration templates must be committed here. Do not make further changes or deployments through Hatchable.
 
-**Target runtime architecture (pending provider connection):**
-- Frontend hosting: Vercel
+**Target runtime architecture (provider configuration and deployment pending):**
+- Source control: GitHub
+- Frontend hosting and Node.js serverless APIs: Vercel
 - Authentication and PostgreSQL: Supabase Auth + Supabase Database
-- Backend: Supabase Edge Functions (or a separately hosted API in this repository)
-- AI: server-side provider integration; secrets must never be exposed in browser code
-- CI/CD: GitHub Actions
+- AI: OpenAI Responses API called only from the server
+- CI: GitHub Actions
 
-### Migration blockers identified in the current code
-1. `api/me.js`, `api/kpi.js`, `api/team.js`, `api/insights.js` and `api/simulate.js` import the Hatchable runtime/database/AI SDK.
-2. `public/login.html` calls `window.hatchable.auth` for OTP and passkey authentication.
-3. `public/app.js` checks `window.hatchable.auth.getSession()` during application startup.
-4. `hatchable.toml` contains Hatchable-specific auth, AI and database access configuration.
-5. The repository currently has no root `package.json`, Vercel configuration or GitHub Actions workflow.
+### Migration implementation status
 
-These dependencies must be replaced before the existing app can run independently of Hatchable. Do not implement custom password storage. Use managed authentication (Supabase Auth) and enforce authorization in server-side functions and database RLS policies.
+The `supabase-schema-foundation` branch now contains:
+- Supabase Auth browser wrapper using email OTP; passkey sign-in is not included in this first migration.
+- Server-side JWT verification and Manager/Agent allowlist enforcement in `api/_lib/supabase.js`.
+- Supabase-compatible `/api/me`, `/api/kpi`, `/api/team` and `/api/insights` endpoints.
+- Server-side AI simulation using the OpenAI Responses API. The API key and model are read from server environment variables.
+- Supabase schema + RLS migration at `supabase/migrations/202611160001_initial_schema.sql`.
+- Vercel configuration, environment-variable template, GitHub Actions syntax workflow and JavaScript syntax-check script.
+- Browser API calls now attach the Supabase access token.
 
-## Migration sequence
+### Remaining blockers and acceptance tests
+1. Create/select a dedicated Supabase project and set `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` in Vercel.
+2. Review and apply the Supabase migration only to the intended new project; configure Supabase email OTP delivery and the email template to display the one-time code.
+3. Set `OPENAI_API_KEY` and `OPENAI_MODEL` in Vercel. The selected model must support the Responses API and JSON output.
+4. Confirm Vercel project settings, deployment and production domain. No deployment has been performed from this branch.
+5. Run Manager, Agent, inactive-account, team scope, KPI write, quiz, leaderboard, AI turn/evaluation and script-library acceptance tests.
+6. Review remaining Hatchable-specific configuration in `hatchable.toml`; keep the old production deployment untouched until all tests pass.
 
-- [ ] Preserve current application as the baseline; do not remove existing modules or approved script content.
-- [ ] Replace Hatchable auth with Supabase Auth (email/password or approved managed sign-in flow).
-- [ ] Recreate the profile, KPI, quiz and simulation data model in Supabase with migrations and Row Level Security.
-- [ ] Reimplement API handlers with verified Supabase JWTs and server-side Manager/Agent authorization.
-- [ ] Move AI simulation to a server-side function and retain its current policy guardrails and scoring rubric.
-- [ ] Verify full script content, copy controls, search/filter behaviour and Roman Hindi/Roman Telugu script additions.
-- [ ] Add Vercel build/deployment configuration and GitHub Actions checks.
-- [ ] Test Manager, Agent, inactive-account, data-scope and AI flows before switching production traffic.
+### Required Vercel environment variables
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (server-only secret)
+- `OPENAI_API_KEY` (server-only secret)
+- `OPENAI_MODEL`
+
+Use `.env.example` as a variable-name reference only. Never commit real values.
 
 ## Important operating rules
 
