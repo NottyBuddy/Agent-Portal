@@ -57,3 +57,12 @@ These dependencies must be replaced before the existing app can run independentl
 - Do not weaken protected-account restrictions or Manager authorization.
 - Keep the existing Hatchable deployment untouched until the replacement has passed acceptance testing.
 - Never commit API keys, database passwords, service-role keys or AI provider secrets.
+
+
+## Supabase schema foundation (prepared, not applied)
+
+A first Supabase migration is available at `supabase/migrations/202611160001_initial_schema.sql`.
+
+It defines UUID-based references to Supabase Auth, the existing profile/KPI/quiz/simulation data model, an allowlisted Manager profile trigger, and Row Level Security policies. Agent users can read their own records; Manager access is restricted to the active `mahesh.s@hrhnext.com` account. KPI writes are Manager-only, quiz submissions are self-scoped, and simulation evaluations are read-only to browser clients so only a trusted server-side function can save them.
+
+**Status:** SQL file committed to the `supabase-schema-foundation` branch for review. It has not been run against a Supabase project. Do not connect production or migrate live data until the SQL is reviewed, a dedicated Supabase project is selected, and the API conversion and acceptance tests are ready.
