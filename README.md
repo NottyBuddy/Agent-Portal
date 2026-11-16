@@ -77,3 +77,15 @@ It defines UUID-based references to Supabase Auth, the existing profile/KPI/quiz
 
 
 **Latest validation note:** GitHub Actions JavaScript syntax checks passed on the initial backend migration commit. The login page HTML was subsequently repaired on this branch; the CI workflow should be rerun against the latest branch head before deployment.
+
+
+### GitHub-driven Vercel deployment
+
+A production deployment workflow is prepared at `.github/workflows/deploy-vercel.yml`. It runs only after a push to `main` or a manual workflow dispatch; it does not deploy this feature branch automatically.
+
+Before using it, add these GitHub Actions repository secrets:
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+Also configure the five application environment variables listed above in the Vercel project's Production environment. The Supabase migration still requires a deliberate manual review and application to the correct Supabase project. No deployment or database migration has been run.
