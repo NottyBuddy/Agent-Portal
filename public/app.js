@@ -34,7 +34,9 @@ async function scriptLibraryPage(){
   {title:'Final Script — Roman Hindi (Part 1: Sections 1–5)',file:'/knowledge/roman-hindi-final-script-part-1.md',label:'ROMAN HINDI'},
   {title:'Final Script — Roman Telugu (Part 1: Sections 1–5)',file:'/knowledge/roman-telugu-final-script-part-1.md',label:'ROMAN TELUGU'},
   {title:'Final Script — Roman Hindi (Part 2: Sections 6–10)',file:'/knowledge/roman-hindi-final-script-part-2.md',label:'ROMAN HINDI'},
-  {title:'Final Script — Roman Telugu (Part 2: Sections 6–10)',file:'/knowledge/roman-telugu-final-script-part-2.md',label:'ROMAN TELUGU'}
+  {title:'Final Script — Roman Telugu (Part 2: Sections 6–10)',file:'/knowledge/roman-telugu-final-script-part-2.md',label:'ROMAN TELUGU'},
+  {title:'Final Script — Roman Hindi (Part 3: Sections 11–18)',file:'/knowledge/roman-hindi-final-script-part-3.md',label:'ROMAN HINDI'},
+  {title:'Final Script — Roman Telugu (Part 3: Sections 11–18)',file:'/knowledge/roman-telugu-final-script-part-3.md',label:'ROMAN TELUGU'}
  ];
  const loaded=await Promise.all(docs.map(async d=>{const r=await fetch(d.file,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+d.title);return {...d,text:await r.text()}}));
  window.__scriptDocs=loaded;
