@@ -39,7 +39,7 @@ Because it is engineered with unplasticized polyvinyl chloride, it resists heat 
 for decades without cracking or turning yellow.
 
 What colors do you have?
-We offer eight versatile color and laminate options, including a 7-year dedicated color warranty on solid grey and solid black profiles.
+We offer approved colour and laminate options. Please ask our Sales team to confirm the current written colour-warranty coverage for the selected finish.
 
 Do you provide mosquito mesh, grills, or child locks?
 Yes, we offer all these integrated features to suit your safety and comfort needs.
@@ -68,7 +68,7 @@ I’ll connect with our sales team. They’ll confirm the technical details and 
 Pricing & Packages
 
 What is your rate?
-Our pricing starts at ₹450 + GST per square foot onwards, depending heavily on the window styles, dimensions, and total quantity.
+Pricing is shared only from the current approved price sheet after the required Sales and Manager confirmation. The final quotation depends on window style, dimensions, configuration and quantity.
 What is included?
 <PARSED TEXT FOR PAGE: 2 / 6>
 The price covers the custom windows, expert installation by our trained in-house team, and dependable after-sales service. GST (18%)
@@ -79,11 +79,10 @@ I’ll connect with our sales team. They’ll confirm the technical details and 
 Delivery & Warranty
 
 How long does it take?
-We boast one of the fastest delivery timelines in the industry, typically taking three to four weeks from order confirmation.
+Delivery timelines are order-specific. Our Sales/Operations team will confirm the current written timeline before sharing an estimate.
 
 What is the warranty?
-We provide a 15-year warranty on the uPVC profile and a 5-year operational warranty on hardware, conveniently issued via a digital
-warranty card. Solid grey and solid black finishes also include a 7-year color warranty.
+Warranty coverage depends on the current written warranty document and selected configuration. Our Sales team will confirm the applicable terms, duration and exclusions before any commitment.
 
 What if something goes wrong?
 We conduct over 30 strict quality checks before installation. If any issue arises afterward, our dedicated after-sales team will inspect and
@@ -119,10 +118,7 @@ I've already decided on someone else.
 "I completely understand, Sir! If you don't mind sharing, who did you end up choosing, just so we can improve? If things ever change or
 you need anything in the future, we’d be happy for you to remember IndiFrame. Wishing you all the best with your new space!
 Send your best price right now.
-"Our pricing starts right from ₹450 per square foot (plus 18% GST), which includes standard white color and toughened glass. Because the
-final cost depends entirely on your exact measurements, window styles, and quantities, anything shared right now would just be an
-estimate. Don't worry, I'll share your details directly with our sales team so they can reach out, clear up all your questions, and assist you
-personally!
+"I understand that pricing is important. The exact price depends on the selected product, dimensions and quantity. I’ll share your requirement with our Sales team so they can confirm the current approved pricing and guide you on the next step."
 
 Window & Door Styles Quick Guide
 
