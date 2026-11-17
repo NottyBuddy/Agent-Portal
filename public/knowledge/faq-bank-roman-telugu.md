@@ -62,7 +62,7 @@ A: “Mimmalni Sales/Technical team tho connect chestanu. Vaallu opening, usage,
 ## 3. Pricing & Packages
 
 **Q: Rate entha?**
-A: “Source reference lo starting price ₹450 per sq. ft. onwards + applicable GST ani undi. Final price window style, dimensions, configuration, hardware, total quantity batti depend avuthundi. Exact quotation kosam Sales team requirement assess chestundi.”
+A: “Current approved price sheet mariyu required Manager confirmation unte matrame pricing share cheyyali. Final price window style, dimensions, configuration, quantity batti depend avuthundi. Old reference rates customer ki quote cheyyakandi.”
 
 **Q: Price lo em include avuthundi?**
 A: “Source FAQ lo custom windows, trained in-house installation, after-sales service mention ayyayi. GST mariyu transport separate ga bill avvachu. Mee quotation lo inclusions, exclusions, tax, transport Sales team tho confirm cheyyandi.”
@@ -73,10 +73,10 @@ A: “Mee requirement ni Sales team ki share chestanu. Current pricing, applicab
 ## 4. Delivery & Warranty
 
 **Q: Delivery ki entha time paduthundi?**
-A: “Source FAQ lo order confirmation taruvata usually 3–4 weeks reference undi. Idi guaranteed commitment kaadu. Mee order, configuration, production, site readiness batti Sales team confirmed timeline istundi.”
+A: “Delivery timeline order batti maarutundi. Sales/Operations nunchi current written confirmation vachina tarvata matrame estimate share cheyyandi. Old timeline ni customer ki promise cheyyakandi.”
 
 **Q: Warranty entha?**
-A: “Source reference lo uPVC profile ki 15-year warranty, hardware ki 5-year operational warranty, Solid Grey/Solid Black finishes ki 7-year colour warranty mention ayyayi. Final written warranty card, coverage, exclusions, current terms Sales team tho verify cheyyandi.”
+A: “Warranty duration, colour coverage, exclusions anni current written warranty document prakaram Sales team confirm chestundi. Old reference terms ni customer ki quote cheyyakandi.”
 
 **Q: Product lo issue vasthe?**
 A: “Issue report cheyyandi. Concerned service team product, installation details, applicable service terms batti inspection mariyu next steps coordinate chestundi. Confirmation lekunda inspection/resolution time promise cheyyakandi.”
@@ -116,7 +116,7 @@ A: “Parledu, Sir. Konni basic details teesukuntanu. Meeru ready ayinappudu cor
 A: “Ardham ayyindi, Sir. Meeru comfortable ga unte ye option select chesaro cheppagalara? Feedback record cheyyadaniki help avuthundi. Future lo requirement unte IndiFrame ni gurthunchukondi. Mee new space ki all the best.”
 
 **“Best price ippude pampandi.”**
-A: “Source reference lo ₹450 per sq. ft. onwards + applicable GST starting price mention ayyindi. Final cost exact measurements, window styles, quantity batti depend avuthundi; ippudu cheppe amount final quotation kaadu. Mee details Sales team ki share chestanu; vaallu contact chesi exact requirement ardham chesukuntaru.”
+A: “Mee requirement ni Sales team ki share chestanu. Vaallu current approved price sheet prakaram pricing confirm chestaru. Exact cost measurements, window styles, quantity batti depend avuthundi.”
 
 ## 7. Window & Door Styles — Quick Guide
 - **Sliding Windows/Doors:** Shutters tracks meeda sideways slide avuthayi. Modern homes, balconies lo commonly use chestaru.

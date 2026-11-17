@@ -1,4 +1,6 @@
 # IndiFrame Product Catalogue / Company Brochure
+> **Agent guardrail — warranty:** This catalogue is a historical source extract and includes warranty figures that may no longer be current. Do not quote any warranty duration, colour coverage or exclusion from this file. Sales must confirm the exact terms from the current written warranty document before communicating them to a customer.
+
 
 > Source: `IndiFrame Brochure.pdf` (44 pages). Text extracted from the supplied brochure; diagrams and images are not represented in this text edition. Verify current availability and specifications with the authorised team before making customer commitments.
 
