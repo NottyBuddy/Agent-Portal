@@ -57,9 +57,9 @@ Prathi call lo anni points cheppakandi. Customer requirement ki relevant ga unna
 3. **Own manufacturing facility:** Medchal facility, trained technicians mariyu machine-based production reference. Capacity/staff figures verify chesake share cheyyandi.
 4. **Project experience:** Source document lo 5,600+ projects, 33 lakh sq ft kanna ekkuva execution claim undi. Current approved figures matrame use cheyyandi.
 5. **Trained installation team:** Installation process mariyu sealing pai trained in-house team.
-6. **Written warranty:** Source SOP headline terms: profile pai 15 years, hardware pai 5 years operational warranty. Selected configuration mariyu written terms Sales tho confirm cheyyandi.
+6. **Written warranty:** Warranty duration, hardware coverage, colour coverage mariyu exclusions current written warranty document prakaram Sales team confirm chestundi. Old source figures ni customer ki quote cheyyakandi.
 7. **Service process:** Service request record chesi resolution varaku track chestaru.
-8. **Delivery lead time:** Source SOP 3–4 weeks ni order confirmation taruvata minimum delivery timeline ga cheptundi. Dinni guaranteed date laga cheppakandi.
+8. **Delivery lead time:** Delivery timeline order-specific. Sales/Operations nunchi current written confirmation vachina tarvata matrame estimate share cheyyandi. Old source timelines ni customer ki promise cheyyakandi.
 
 **Timeline rule:** 3–4 weeks leda vere ye delivery/installation timeline ni customer ki promise cheyyakandi. Sales/Operations nunchi current written confirmation vachina tarvata matrame timeline cheppandi. Exact date leda commitment agent ivvakudadhu.
 
@@ -180,8 +180,7 @@ Glass thickness, decibel figure leda option-wise price cheppakandi.
 Source SOP lo 8 options: White, Solid Grey, Solid Black, Red Oak, Dark Oak, Walnut, Grey Laminate, Black Laminate. Current catalogue lo availability verify cheyyandi.
 
 Source warranty reference:
-- Solid Grey mariyu Solid Black: 7 years colour warranty.
-- Solid White: 15 years colour warranty.
+- Colour warranty: Selected finish ki applicable coverage ni current written warranty document prakaram Sales team confirm chestundi. Old source duration figures ni customer ki quote cheyyakandi.
 - Laminated finishes: 20 years colour warranty.
 
 Ivi headline figures matrame. Selected finish written terms, exclusions mariyu claim process Sales confirm chestundi.
