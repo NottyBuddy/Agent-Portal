@@ -1,5 +1,7 @@
 # Final Brand & Product SOP — Pre-Sales Calling Team
 
+> **CURRENT COMMERCIAL CLAIMS OVERRIDE:** Historical price, delivery and warranty figures in older source material are not customer-facing approvals. Quote pricing only from the current approved price sheet with required Manager confirmation. Share delivery timelines only after written Sales/Operations confirmation. Share warranty duration, colour coverage and exclusions only from the current written warranty document. If confirmation is unavailable, do not quote a number or promise; arrange a Sales callback.
+
 <PARSED TEXT FOR PAGE: 1 / 22>
                                                        INDIFRAME WINDOWS & DOORS
                                                          Final Brand & Product SOP: Pre-Sales Calling Team
@@ -90,15 +92,9 @@ Use two or three on a call, never all eight. Pick the ones that answer what the 
           before.”
     5.    Our own installation team. Employed by us, trained at our in-house training school, following a standard installation and sealing process. Most leaks, stuck shutters and rattling
           windows in this market are installation failures, not product failures.
-    6.    A warranty in writing, and a team that turns up. “You get 15 years on the profile and 5 years operational warranty on the hardware, Sir, issued digitally in the company’s name.
-          And if anything needs attention after installation, that’s what our service team is for. You call us, we come. You won’t be chasing anybody.”
+    6.    A warranty in writing, and a team that turns up. “Warranty coverage is confirmed in the current written warranty document, Sir. Our Sales team can explain the applicable terms and exclusions. And if anything needs attention after installation, our service team can guide you through the approved service process.”
     7.    A service team that exists. A formal service request process. Someone answers, someone comes, and it is tracked to closure.
-    8.    One of the fastest lead times. “We’re one of the fastest in the industry on delivery, Sir, typically three to four weeks. If you’re working to a date, that’s usually where we make the
-          biggest difference.”
-
-        Guardrail on lead time. You may say “three to four weeks”, which is our minimum delivery time from order confirmation; never promise faster. You may not commit a delivery or
-        installation date. Actual timelines depend on order size, product mix, glass and colour selection and current production load; only Sales and Operations can confirm. Never say
-        “you’ll have them by the 20th”.
+    8.    Delivery timelines are order-specific. Do not quote a standard duration or describe a timeline as one of the fastest. Sales/Operations must provide current written confirmation before any estimate is shared. Never promise a delivery or installation date.
 
 6. The Market and Where We Sit
 6.1 Three kinds of supplier
@@ -291,10 +287,10 @@ the look of wood with no maintenance at all.”
         For your understanding only (never share): white is our base, solid grey and solid black sit above white, and laminated finishes sit above those. Colour genuinely moves the
         number, so never imply otherwise.
 
-Colour warranty. Solid grey and solid black carry a 7-year colour warranty, solid white carries 15 years and laminated finishes carry 20 years. Use it when a customer worries about colour
+Colour-warranty coverage varies by finish and must be confirmed from the current written warranty document. Do not quote historical duration figures.
 fading in the sun.
 
-Agent: “Solid grey and solid black come with a 7-year colour warranty, Sir, in writing. Dark colours in our sun are a fair thing to ask about, and that’s covered.”
+Agent: “Colour-warranty coverage depends on the selected finish. Our Sales team can confirm the applicable terms from the current written warranty document, Sir.”
 
 Agent (white or laminate): “Solid white carries a 15-year colour warranty, Sir, and our laminated finishes carry 20 years.” Do not go beyond these figures. Exclusions and claim procedure are
 a handover.
@@ -368,19 +364,15 @@ Agent: “Sir, just so I connect you to the right person at the right time, what
 
 12. Price: What You May Say, and What You May Not
 12.1 The authorised number
-           The only price you ever say: our range starts from ₹450 per sq ft onwards, plus 18% GST. The final price depends on three things: the typology (type of window or door), the sizes
-           of the openings and the quantity.
+           Do not quote a starting rate from historical source material. Share pricing only when the current approved price sheet and required Manager confirmation are available. Final pricing depends on product type, opening dimensions, configuration and quantity.
 
 12.2 Why we give a number at all
-Refusing to discuss price (“I can’t share that, Sir”) sounds evasive, and evasive reads as expensive. The starting price is also a filter: a customer whose budget is ₹250 per sq ft should not wait
-a week for a sales visit that was never going to work.
+Be transparent without quoting an unapproved figure. Explain that the exact quotation depends on product type, opening dimensions, configuration and quantity, and arrange a Sales callback for current approved pricing.
 
 12.3 How to say it
-Never say the number bare. Always three parts in this order: the starting point, what it depends on, the next step. The two words that do the heavy lifting are “starts from” and “onwards”.
+Use three parts: acknowledge the question, explain that pricing depends on product type/dimensions/quantity, and offer a Sales callback using the current approved price sheet. Do not quote historical rates.
 <PARSED TEXT FOR PAGE: 11 / 22>
-Agent: “Our range starts from ₹450 per square foot onwards, plus GST, Sir. The exact number depends on the type of windows you choose, the sizes and how many you’re doing, so I
-wouldn’t want to give you a figure that turns out to be wrong. What our team usually does is a free site consultation and gives you an exact quotation, with no obligation at all. Would that
-be useful?”
+Agent: “I understand that pricing is important, Sir. The exact quotation depends on the product type, dimensions, configuration and quantity. I can arrange for our Sales team to confirm the current approved pricing after understanding your requirement. Would that be helpful?”
 
 Never lead with price. If the customer opens with “what’s your rate?”, understand the requirement first (thirty seconds), then give the range.
 
@@ -402,8 +394,7 @@ was told.
 Hold the line, warmly.
 
 Agent: “I understand, Sir. I’d like to give you a number too. The honest problem is that two houses with the same number of windows can be quite far apart on price, depending on the sizes
-and the type of window. If I guess and it’s wrong, that helps neither of us. What I can tell you is where our range starts: ₹450 per square foot onwards, plus GST. For the actual figure, our
-team can do a free site consultation and give you an exact quotation. There is no obligation and no charge.”
+and the type of window. If I guess, the information may be inaccurate. Our Sales team can confirm current approved pricing after understanding the requirement and arranging the appropriate consultation.”
 
 The free site consultation is your best move on any price conversation.
 
@@ -459,10 +450,10 @@ Do not say “slightly more”, “a small premium” or “not much difference�
 <PARSED TEXT FOR PAGE: 13 / 22>
 13. The Red Line: What You Never Answer
 13.1 Never
-    1.  A delivery or installation date. You may say “typically three to four weeks”.
+    1.  A delivery or installation date, or any standard timeline. Share an estimate only after written Sales/Operations confirmation.
     2.  Technical specifications: profile thickness, chamber count, wind load, glass thickness, decibel ratings, frame depth, maximum sizes.
     3.  Whether a specific design is possible: arches, very large spans, unusual shapes, matching an existing window. Never yes, never no.
-    4.  Warranty detail beyond 15 years profile, 5 years hardware operational, and colour warranty of 7 years (solid grey and solid black), 15 years (solid white) and 20 years (laminated).
+    4.  Any warranty duration, colour coverage, exclusion or claim detail not confirmed in the current written warranty document.
         No exclusions, edge cases or claim procedure.
     5. A line-by-line comparison against a competitor’s quote.
     6. A diagnosis of an existing problem: a leak, a stuck handle, a rattle.
@@ -666,11 +657,11 @@ How to read this: ANSWER means you may answer as written. HAND OVER means you ro
       ANSWER – Is uPVC strong? It’s plastic. / Will it yellow, crack or last?
        See Section 8.1.
       ANSWER – What colours do you have?
-       See Section 10.2. Eight options; colour warranty 7 years (solid grey, solid black), 15 years (solid white), 20 years (laminated).
+       See Section 10.2. Confirm colour-warranty coverage from the current written warranty document.
       ANSWER – Can I get wooden-look windows?
        “Yes, Sir. We have laminated finishes (red oak, dark oak, walnut, grey laminate and black laminate) which give the look of wood without the maintenance.”
       ANSWER – Will the colour fade in the sun?
-       “Solid grey and solid black come with a 7-year colour warranty, Sir, in writing. Solid white carries 15 years and our laminated finishes 20 years.”
+       “Our Sales team can confirm the colour-warranty coverage for the selected finish from the current written warranty document, Sir.”
       ANSWER – Do you do mosquito mesh, grills or child locks?
        “Yes, Sir. Mesh can be integrated into the window, and grill options are available.” No pricing, no spec.
       ANSWER – What glass will you give? Is it safe for children?
@@ -704,7 +695,7 @@ How to read this: ANSWER means you may answer as written. HAND OVER means you ro
 
 18.3 Price
       ANSWER – What’s your rate?
-       “Our range starts from ₹450 per square foot onwards, plus 18% GST, Sir. It depends on the type of windows, the sizes and the quantity.”
+       “Pricing depends on the product type, dimensions, configuration and quantity, Sir. Our Sales team can confirm the current approved pricing.”
       ANSWER – What’s included?
        “The starting rate covers the standard specification, Sir: white colour, clear glass and the 60 series, along with installation by our own team and after-sales service. GST at 18% and
        transport are separate. Other colours, glass or systems our Sales Team will price for you.”
@@ -719,13 +710,13 @@ How to read this: ANSWER means you may answer as written. HAND OVER means you ro
 
 18.4 Delivery, warranty and service
       ANSWER – How long does it take?
-       “Three to four weeks from order confirmation, Sir, which is our minimum delivery time and one of the fastest in the industry. Our team will confirm for your specific order.” Never a
+       “Our Sales/Operations team will confirm the current written delivery timeline for your specific order, Sir.” Never a
        date.
       ANSWER – Can you do the work before a certain date?
-       “I understand the date matters, Sir. Our standard timeline is typically three to four weeks, but the exact timeline depends on the order. Our Sales Team will confirm it. I’ll flag your
+       “I understand the date matters, Sir. Our Sales/Operations team will confirm the current written timeline for your specific order. I’ll flag your
        date to them.”
       ANSWER – What’s the warranty?
-       “15 years on the profile and 5 years operational warranty on the hardware, issued as a digital warranty card, Sir. On colour, solid grey and solid black carry 7 years, solid white 15
+       “The current written warranty document explains the applicable profile, hardware and colour coverage, Sir. Our Sales team can confirm the exact terms and exclusions for your selected configuration.
        years and laminated finishes 20 years. For exact terms on your selection, our Sales Team will explain.”
       ANSWER – What if something goes wrong? / What if the window is damaged during installation?
        See Section 13.4. Lead with the 30+ quality checks. Say “fix”, never “replace”. “Our installation is done by our own trained team, Sir. If anything comes up during or after installation,
@@ -818,11 +809,11 @@ The source files disagreed on the points below. This list records the decision a
 
     1. Retry cadence: 15 attempts across 9 calendar days (schedule in the Script).
     2. Factory visits: The agent logs the request and tags the regional owner. Sales confirms. The agent never invites, confirms or refuses.
-    3. Colour warranty: 7 years on solid grey and solid black, 15 years on solid white, 20 years on laminated finishes.
+    3. Colour warranty: Confirm coverage and exclusions from the current written warranty document.
     4. Aluminium: Treated as offered. The agent routes every aluminium enquiry to Sales and gives no price, specs or timelines.
     5. Jubilee Hills flagship: “Opening soon. Sales will share the date.” Never a date.
     6. Machinery: Both are stated: European machinery and Turkish CNC machinery.
-    7. Delivery time: Three to four weeks is the minimum delivery time. The brochure’s 14-day claim is not used.
+    7. Delivery time: No standard duration may be promised. Sales/Operations must confirm the current written order-specific timeline.
     8. Standard specification in the starting rate: The starting rate includes standard white colour, clear glass and the 60 series.
     9. Brochure claims not used: RERA-aligned 5-year warranty and Karnataka as a focus market.
     10. Green Fortune role: Partner fabricators work with our material; no promise of full IndiFrame service on partner leads.
