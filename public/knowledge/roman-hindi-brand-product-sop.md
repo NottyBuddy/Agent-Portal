@@ -61,7 +61,7 @@ Har call par saare points na bolen. Customer ki requirement ke hisaab se sirf 2�
 7. **Service process:** Service request record hoti hai aur resolution tak track ki jaati hai.
 8. **Delivery lead time:** Source SOP 3–4 weeks ko minimum delivery timeline batata hai, order confirmation ke baad. Isse guaranteed date na banayein.
 
-**Timeline rule:** 3–4 weeks se kam ka promise kabhi na karein. Kisi specific delivery ya installation date ki commitment na dein. Actual time order size, product mix, glass, colour aur production load par depend karta hai. Exact confirmation Sales/Operations hi denge.
+**Timeline rule:** 3–4 weeks ya koi bhi delivery/installation timeline customer ko promise na karein. Timeline sirf Sales/Operations ki current written confirmation milne ke baad batayein. Exact date ya commitment agent khud na de.
 
 ## 5. Market Mein Hamari Position
 ### 5.1 Teen tarah ke supplier
@@ -231,12 +231,12 @@ Site tab ready mani jaati hai jab window openings ban chuki hon aur plastering c
 
 ## 11. Price — Kya Kehna Allowed Hai
 ### 11.1 Approved starting reference
-Source SOP mein authorised starting reference ₹450 per sq ft onwards + 18% GST diya gaya hai. Is figure ko customer ko batane se pehle current approved price sheet se verify karein. Final price window/door type, opening size aur quantity par depend karta hai.
+Source SOP mein ₹450 per sq ft onwards + 18% GST ka historical reference diya gaya hai. Yeh customer-facing approved rate nahi maana jayega. Current approved price sheet aur manager confirmation available ho tabhi exact authorised starting rate share karein; warna koi number quote na karein. Final price window/door type, opening size aur quantity par depend karta hai.
 
 ### 11.2 Price ka jawab kaise dein
-Pehle requirement samjhein; phir approved starting range, dependencies aur next step batayein.
+Pehle requirement samjhein. Current approved price sheet verify na ho toh rate quote na karein; Sales se confirmation aur exact quotation ka next step batayein.
 
-**Agent:** “Sir, approved starting range ₹450 per square foot onwards plus GST se hai. Exact price window type, size aur quantity par depend karega. Hamari team free site consultation ke baad exact quotation degi.”
+**Agent:** “Sir, exact price window type, size aur quantity par depend karta hai. Main bina current approved price confirmation ke koi amount share nahi karna chahta. Hamari Sales team requirement samajhkar approved quotation share karegi.”
 
 Customer call ke start mein rate pooche toh pehle 30 seconds mein project type aur rough quantity samjhein.
 
@@ -252,7 +252,7 @@ Customer call ke start mein rate pooche toh pehle 30 seconds mein project type a
 Agar galti se unapproved figure bol diya ho, CRM mein exact statement record karein aur TL ko flag karein.
 
 ### 11.4 “Mere ghar ka rough idea de do”
-**Agent:** “Samajh sakta hoon Sir. Same number of windows hone par bhi sizes aur types ke hisaab se price badal sakta hai. Main galat estimate nahi dena chahta. Main approved starting range share kar sakta hoon; exact quotation free site consultation ke baad milega.”
+**Agent:** “Samajh sakta hoon Sir. Same number of windows hone par bhi sizes aur types ke hisaab se price badal sakta hai. Main galat estimate nahi dena chahta. Sales team current approved pricing verify karke aapko exact quotation share karegi.”
 
 ### 11.5 “Bahut expensive hai”
 Normal objection aur actual budget mismatch alag rakhein.
@@ -443,14 +443,14 @@ Quantity clear na ho toh rough estimate ya bedroom count se context lein. Price 
 **HANDOVER:** Which window suits opening; measurements/thickness/chamber/rating; arch/large span/custom feasibility.
 
 ### 17.3 Price
-- **Rate?** Sirf current approved starting range, GST aur dependencies batayein. Exact quotation Sales.
+- **Rate?** Current approved price sheet aur manager approval verify hone par hi authorised rate batayein. Verification na ho toh koi amount quote na karein; exact quotation Sales degi.
 - **Included?** Current quotation template se inclusion verify. Source SOP standard spec, installation aur after-sales include; GST aur transport separate batata hai.
 - **GST bill?** Applicable GST quotation mein clearly show hota hai. GST avoid karne ka workaround nahi.
 - **WhatsApp quotation?** Exact quote ke liye dimensions, type aur quantity chahiye; consultation arrange karein.
 - **Baaki price questions:** HANDOVER—colour premium, glass/hardware, total, per-window rate, discount, transport, advance, EMI, minimum order, cancellation/changes.
 
 ### 17.4 Delivery, warranty aur service
-- **Kitna time?** Source reference 3–4 weeks minimum; exact order timeline Sales confirm karegi. Date promise nahi.
+- **Kitna time?** Delivery/installation timeline Sales/Operations ki current written confirmation ke baad hi batayein. Koi date ya minimum duration promise na karein.
 - **Specific date se pehle?** Deadline flag karein; Sales/Operations confirm.
 - **Warranty?** Sirf approved headline terms; exact product/finish terms written document se verify.
 - **Issue/damage?** “Fix” kahe; replace promise nahi. Existing customer complaint Service Request banayein.
@@ -506,9 +506,9 @@ Quantity clear na ho toh rough estimate ya bedroom count se context lein. Price 
 - **Company:** IndiFrame aur Green Fortune ek hi company ke do brands.
 - **Pitch:** Design/manufacturing/installation aur applicable warranty ke liye ek accountable company.
 - **Location:** Hyderabad HQ/manufacturing; customer ki local serviceability PIN code se verify.
-- **Starting price:** Source SOP ₹450/sq ft onwards + 18% GST; current approved rate verify.
-- **Delivery:** Source SOP 3–4 weeks minimum; exact date Sales/Operations.
-- **Warranty:** Source headline profile 15 years, hardware operational 5 years; colour terms finish ke hisaab se. Written terms verify.
+- **Starting price (internal source reference only):** Source SOP mein ₹450/sq ft onwards + 18% GST diya hai. Customer ko tabhi batayein jab current approved price sheet aur manager confirmation mil jaye; warna quote na karein.
+- **Delivery (internal source reference only):** Source SOP mein 3–4 weeks minimum likha hai. Isse customer promise na banayein; current written timeline Sales/Operations se verify karein.
+- **Warranty (internal source reference only):** Source headline terms profile 15 years, hardware operational 5 years aur colour-wise terms batate hain. Customer ko sirf current written warranty document ke exact terms batayein.
 - **Colours:** White, Solid Grey, Solid Black, Red Oak, Dark Oak, Walnut, Grey Laminate, Black Laminate—current catalogue verify.
 - **Current products:** uPVC windows/doors; aluminium enquiries Sales ko.
 - **Six questions:** Residential/commercial; location/PIN; customer role; construction stage; rough quantity; plastering/readiness.
@@ -524,7 +524,7 @@ Quantity clear na ho toh rough estimate ya bedroom count se context lein. Price 
 4. **Aluminium:** Offered; all details/pricing/timelines Sales se.
 5. **Jubilee Hills:** Source mein opening soon; date sirf Sales share karegi. Current status verify.
 6. **Machinery:** Source European aur Turkish CNC machinery dono mention karta hai; current approved statement use karein.
-7. **Delivery:** 3–4 weeks minimum; brochure ka 14-day claim use nahi.
+7. **Delivery source conflict:** Source SOP 3–4 weeks minimum batata hai aur brochure ka 14-day claim reject karta hai. Dono ko customer promise na banayein; current written timeline Sales/Operations confirm karegi.
 8. **Starting rate standard spec:** Source white, clear glass, 60 Series include batata hai; current quotation template se verify.
 9. **Unapproved brochure claims:** RERA-aligned 5-year warranty aur Karnataka focus market jaise conflicting claims use na karein jab tak current approval na ho.
 10. **Green Fortune:** IndiFrame se alag partner fabricator nahi; same company ka profile brand. Kisi external fabricator ka local route ho toh uska exact relationship aur service scope verify karke hi batayein.
