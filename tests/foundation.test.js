@@ -64,3 +64,22 @@ test('server auth and database migration retain required access-control guardrai
   assert.match(team, /requireUser\(req, res, \{ manager: true \}\)/);
   assert.match(kpi, /if \(!auth\.isManager\)/);
 });
+
+
+test('agent-visible leaderboard returns only approved ranking fields', async () => {
+  const { publicLeaderboardRows } = await import('../api/_lib/insights.js');
+  const projected = publicLeaderboardRows([{
+    user_id: 'private-user-id', email: 'agent@example.com', display_name: 'Agent A',
+    attempts: 40, connected: 12, qualified: 5, consultations: 2,
+    productive_actions: 8, connect_rate: 30, quiz_score: 95, quiz_count: 4,
+    sim_score: 88, sim_count: 3, talk_minutes: 120
+  }]);
+  assert.deepEqual(projected, [{
+    display_name: 'Agent A', connect_rate: 30, qualified: 5,
+    consultations: 2, productive_actions: 8
+  }]);
+  assert.equal(Object.hasOwn(projected[0], 'email'), false);
+  assert.equal(Object.hasOwn(projected[0], 'quiz_score'), false);
+  assert.equal(Object.hasOwn(projected[0], 'sim_score'), false);
+  assert.equal(Object.hasOwn(projected[0], 'talk_minutes'), false);
+});

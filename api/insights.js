@@ -1,5 +1,6 @@
 import { methodNotAllowed, requireUser, send } from './_lib/supabase.js';
 import { gradeQuizAnswers } from './_lib/quiz.js';
+import { publicLeaderboardRows } from './_lib/insights.js';
 
 const DAY_MS = 86400000;
 function isoDate(date) { return date.toISOString().slice(0, 10); }
@@ -105,5 +106,5 @@ export default async function handler(req, res) {
       sim_count: s?.count || 0, last_sim: s?.last || null
     };
   });
-  return send(res, 200, { role: auth.profile.role, rows });
+  return send(res, 200, { role: auth.profile.role, rows: leaderboard ? publicLeaderboardRows(rows) : rows });
 }
