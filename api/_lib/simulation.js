@@ -46,7 +46,7 @@ export function validateSimulationHistory(history, mode) {
 export function validateCustomerReply(data) {
   if (!data || typeof data.customer_reply !== 'string') return null;
   const reply = data.customer_reply.trim();
-  if (!reply || reply.length > 900 || reply.split(/\\s+/).length > 90) return null;
+  if (!reply || reply.length > 900 || reply.split(/\s+/).length > 90) return null;
   return reply;
 }
 
