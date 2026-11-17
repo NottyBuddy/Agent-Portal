@@ -62,7 +62,7 @@ A: “Main aapko Sales/Technical team se connect karwaunga/karwaungi. Woh openin
 ## 3. Pricing & Packages
 
 **Q: Aapka rate kya hai?**
-A: “Source reference mein starting price ₹450 per sq. ft. onwards + applicable GST diya gaya hai. Final price window style, dimensions, configuration, hardware aur total quantity par depend karta hai. Exact quotation ke liye Sales team requirement assess karegi.”
+A: “Pricing sirf current approved price sheet aur required Manager confirmation ke basis par share ki jayegi. Final price window style, dimensions, configuration aur quantity par depend karta hai. Purane reference rates quote na karein.”
 
 **Q: Price mein kya included hai?**
 A: “Source FAQ mein custom windows, trained in-house installation aur after-sales service ka reference hai. GST aur transport ko separately bill kiya ja sakta hai. Aapke specific quotation mein inclusions, exclusions, tax aur transport Sales team se confirm karwayein.”
@@ -73,10 +73,10 @@ A: “Main aapki requirement Sales team ko share karunga/karungi. Woh current pr
 ## 4. Delivery & Warranty
 
 **Q: Delivery mein kitna time lagega?**
-A: “Source FAQ mein order confirmation ke baad typically 3–4 weeks ka reference hai. Ye guaranteed commitment nahi hai. Aapke order, configuration, production aur site readiness ke hisaab se Sales team confirmed timeline degi.”
+A: “Delivery timeline order-specific hoti hai. Sales/Operations se current written confirmation milne ke baad hi estimate share karein. Purani timeline ko customer se promise na karein.”
 
 **Q: Warranty kya hai?**
-A: “Source reference mein uPVC profile par 15-year warranty, hardware par 5-year operational warranty aur Solid Grey/Solid Black finishes par 7-year colour warranty ka mention hai. Final written warranty card, coverage, exclusions aur current terms Sales team se verify karwayein.”
+A: “Warranty duration, colour coverage aur exclusions current written warranty document se Sales team confirm karegi. Purane reference terms ko customer se quote na karein.”
 
 **Q: Agar product mein issue ho gaya toh?**
 A: “Aap issue report karein. Hamari concerned service team product, installation details aur applicable service terms ke hisaab se inspection aur next steps coordinate karegi. Inspection ya resolution time bina confirmation promise na karein.”
@@ -116,7 +116,7 @@ A: “Bilkul theek hai, Sir. Main kuch basic details le leta/leti hoon, taaki ja
 A: “Main samajh sakta/sakti hoon. Agar aap comfortable hon, toh bata sakte hain aapne kaunsa option select kiya? Isse hum feedback record kar paayenge. Future mein zaroorat ho toh IndiFrame ko yaad rakhiye. Aapke naye space ke liye best wishes.”
 
 **“Abhi best price bhejo.”**
-A: “Source reference mein ₹450 per sq. ft. onwards + applicable GST starting price diya gaya hai. Final cost exact measurements, window styles aur quantity par depend karti hai; abhi diya gaya amount final quotation nahi hoga. Main aapki details Sales team ko share karunga/karungi, woh aapse contact karke exact requirement samjhenge.”
+A: “Main aapki requirement Sales team ko share karunga/karungi. Woh current approved price sheet ke basis par pricing confirm karenge. Exact cost measurements, window styles aur quantity par depend karti hai.”
 
 ## 7. Window & Door Styles — Quick Guide
 - **Sliding Windows/Doors:** Shutters tracks par sideways slide karte hain. Modern homes aur balconies mein commonly use hote hain.
