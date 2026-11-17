@@ -45,10 +45,8 @@ details in the Daily Leads WhatsApp Group, tag the designated Regional Sales Own
 free site audit or showroom/Experience Centre visit.
 C7 – Routed to Partner (B2F): Site is outside direct IndiFrame service coverage. Offer the authorized 
 Green Fortune partner route and update CRM accordingly.
-Pricing rule: quote only “Starts from ₹450 per sq ft onwards” plus applicable GST. Do not calculate 
-custom prices during initial qualification.
-Authorized warranty claims: 15-year profile warranty, 5-year hardware warranty, and 7-year color 
-warranty.
+Pricing rule: Do not quote a starting rate from historical material. Share a price only when the current approved price sheet and required Manager confirmation are available. Otherwise, capture the requirement and arrange a Sales callback.
+Warranty rule: Do not quote warranty durations or colour coverage from historical material. Sales must confirm the exact current written warranty, coverage and exclusions.
 4. Scenario A – Digital Ad Lead
 Context: Fresh enquiry from Meta, Google, Website, WhatsApp, or another digital channel.
 A1. Opening & Permission
@@ -342,9 +340,7 @@ Agent: “Absolutely, [Customer Name]. I’d be happy to share the relevant prod
 sure we send you the right information, may I quickly confirm whether you are looking for 
 windows, doors, or both?”
 “I Only Want the Price.”
-Agent: “I completely understand that pricing is important. Our products start from ₹450 per sq ft 
-onwards plus applicable GST. Since the products are customized, may I ask for a rough quantity 
-and type so our team can guide you appropriately?”
+Agent: “I completely understand that pricing is important. The exact price depends on the product type, dimensions and quantity. I can arrange for our Sales team to confirm the current approved pricing after understanding your requirement. May I ask roughly how many windows and doors you are considering?”
 “I’m Busy.”
 Agent: “I completely respect your time, [Customer Name]. When would be a better and more 
 convenient time for our sales team to give you a quick callback?”
