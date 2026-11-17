@@ -791,9 +791,7 @@ Print this page. Keep it on the desk.
          engineered for Indian conditions.
         Maharashtra customers: Manufacturing in Hyderabad. Office and Experience Centre at Malad West, Mumbai. Service team for Mumbai, Pune and Nagpur.
         The pitch in one line: One company: we design it, make it, install it with our own trained team and warranty it.
-        Numbers you may say: From ₹450/sq ft onwards plus 18% GST. 3 to 4 weeks minimum delivery time. 15 years profile warranty. 5 years hardware operational warranty. Colour
-         warranty: 7 years (solid grey, solid black), 15 years (solid white), 20 years (laminated). 30+ quality checks. Starting rate covers the standard specification (white colour, clear glass, 60
-         series), installation and after-sales; transport extra.
+        Commercial approval rule: Do not quote historical price, delivery or warranty figures. Use only the current approved price sheet with required Manager confirmation, the current written Sales/Operations timeline, and the current written warranty document. Never assume inclusions, GST, transport or specification from an old starting-rate reference.
         Eight colours: White, Solid Grey, Solid Black, Red Oak, Dark Oak, Walnut, Grey Laminate, Black Laminate.
         What we sell today: uPVC windows and doors. Aluminium windows and doors: details only via Sales.
         Coming later: Pre-hung doors (wooden flush, ABS, WPC) and railings. No dates.
