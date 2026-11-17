@@ -61,7 +61,7 @@ Prathi call lo anni points cheppakandi. Customer requirement ki relevant ga unna
 7. **Service process:** Service request record chesi resolution varaku track chestaru.
 8. **Delivery lead time:** Source SOP 3–4 weeks ni order confirmation taruvata minimum delivery timeline ga cheptundi. Dinni guaranteed date laga cheppakandi.
 
-**Timeline rule:** 3–4 weeks kanna takkuva time promise cheyyakandi. Specific delivery/installation date commit cheyyakandi. Actual time order size, product mix, glass, colour mariyu production load pai depend avutundi. Exact confirmation Sales/Operations matrame istaru.
+**Timeline rule:** 3–4 weeks leda vere ye delivery/installation timeline ni customer ki promise cheyyakandi. Sales/Operations nunchi current written confirmation vachina tarvata matrame timeline cheppandi. Exact date leda commitment agent ivvakudadhu.
 
 ## 5. Market Lo Mana Position
 ### 5.1 Moodu rakala suppliers
@@ -231,12 +231,12 @@ Window openings ready ayi plastering complete ayinappudu site ready ga consider 
 
 ## 11. Price — Emi Cheppachu
 ### 11.1 Approved starting reference
-Source SOP lo authorised starting reference ₹450 per sq ft onwards + 18% GST ani undi. Customer ki cheppe mundu current approved price sheet tho verify cheyyandi. Final price window/door type, opening size mariyu quantity pai depend avutundi.
+Source SOP lo ₹450 per sq ft onwards + 18% GST ane historical reference undi. Dinni customer-facing approved rate ga consider cheyyakudadhu. Current approved price sheet mariyu manager confirmation unte matrame authorised starting rate share cheyyandi; lekapothe amount quote cheyyakandi. Final price window/door type, opening size mariyu quantity pai depend avutundi.
 
 ### 11.2 Price question ki ela answer ivvali
-Munduga requirement ardham chesukondi; tarvata approved starting range, dependencies mariyu next step cheppandi.
+Munduga requirement ardham chesukondi. Current approved price sheet verify kakapothe rate quote cheyyakandi; Sales confirmation mariyu exact quotation next step cheppandi.
 
-**Agent:** “Sir, approved starting range ₹450 per square foot onwards plus GST nunchi start avutundi. Exact price window type, size mariyu quantity pai depend avutundi. Free site consultation tarvata maa team exact quotation istundi.”
+**Agent:** “Sir, exact price window type, size mariyu quantity pai depend avutundi. Current approved price confirmation lekunda nenu amount cheppadam correct kaadu. Maa Sales team requirement ardham chesukoni approved quotation share chestundi.”
 
 Customer call start lone rate adigithe, first 30 seconds lo project type mariyu rough quantity telusukondi.
 
@@ -252,7 +252,7 @@ Customer call start lone rate adigithe, first 30 seconds lo project type mariyu 
 Unapproved figure cheppina situation lo CRM lo exact statement record chesi TL ki flag cheyyandi.
 
 ### 11.4 “Maa intiki rough idea cheppandi”
-**Agent:** “Ardham ayyindi Sir. Same number of windows unna kuda sizes mariyu types batti price change avutundi. Wrong estimate ivvadam nenu ishtapadanu. Approved starting range share chestanu; exact quotation free site consultation tarvata vastundi.”
+**Agent:** “Ardham ayyindi Sir. Same number of windows unna kuda sizes mariyu types batti price change avutundi. Wrong estimate ivvadam nenu ishtapadanu. Sales team current approved pricing verify chesi meeku exact quotation share chestundi.”
 
 ### 11.5 “Chala expensive”
 Normal objection mariyu actual budget mismatch ni separate ga choodandi.
@@ -443,14 +443,14 @@ Quantity teliyakapotey rough context adagandi. Price calculate cheyyakandi.
 **HANDOVER:** Opening ki ye window suit avutundi; measurements/thickness/chamber/rating; arch/large span/custom feasibility.
 
 ### 17.3 Price
-- **Rate?** Current approved starting range, GST mariyu dependencies matrame cheppandi. Exact quotation Sales.
+- **Rate?** Current approved price sheet mariyu manager approval verify ayyaka matrame authorised rate cheppandi. Verification lekapothe amount quote cheyyakandi; exact quotation Sales istundi.
 - **Included?** Current quotation template tho verify. Source SOP standard spec, installation, after-sales include; GST/transport separate ani cheptundi.
 - **GST bill?** Applicable GST quotation lo clear ga untundi. GST avoid cheyadaniki workaround vaddu.
 - **WhatsApp quotation?** Exact quote kosam dimensions, type, quantity avasaram; consultation arrange cheyyandi.
 - **Other price questions:** HANDOVER—colour premium, glass/hardware, total, per-window rate, discount, transport, advance, EMI, minimum order, cancellation/changes.
 
 ### 17.4 Delivery, warranty mariyu service
-- **Entha time?** Source reference 3–4 weeks minimum; exact order timeline Sales confirm chestundi. Date promise vaddu.
+- **Entha time?** Sales/Operations current written confirmation vachina tarvata matrame delivery/installation timeline cheppandi. Date leda minimum duration promise cheyyakandi.
 - **Specific date mundu possible aa?** Deadline flag cheyyandi; Sales/Operations confirm chestaru.
 - **Warranty?** Approved headline terms matrame; exact product/finish terms written document tho verify.
 - **Issue/damage?** “Fix” ani cheppandi; replace promise vaddu. Existing customer complaint ki Service Request create cheyyandi.
@@ -506,9 +506,9 @@ Quantity teliyakapotey rough context adagandi. Price calculate cheyyakandi.
 - **Company:** IndiFrame mariyu Green Fortune oke company ki chendina rendu brands.
 - **Pitch:** Design/manufacturing/installation mariyu applicable warranty kosam oka accountable company.
 - **Location:** Hyderabad HQ/manufacturing; customer local serviceability PIN code tho verify.
-- **Starting price:** Source SOP ₹450/sq ft onwards + 18% GST; current approved rate verify.
-- **Delivery:** Source SOP 3–4 weeks minimum; exact date Sales/Operations confirm.
-- **Warranty:** Source headline profile 15 years, hardware operational 5 years; colour terms finish batti. Written terms verify.
+- **Starting price (internal source reference only):** Source SOP lo ₹450/sq ft onwards + 18% GST undi. Current approved price sheet mariyu manager confirmation vachinappude customer ki cheppandi; lekapothe quote cheyyakandi.
+- **Delivery (internal source reference only):** Source SOP lo 3–4 weeks minimum ani undi. Dinni customer promise ga cheppakandi; current written timeline Sales/Operations tho verify cheyyandi.
+- **Warranty (internal source reference only):** Source headline terms profile 15 years, hardware operational 5 years mariyu colour-wise terms cheptunnayi. Customer ki current written warranty document lo unna exact terms matrame cheppandi.
 - **Colours:** White, Solid Grey, Solid Black, Red Oak, Dark Oak, Walnut, Grey Laminate, Black Laminate—current catalogue verify.
 - **Current products:** uPVC windows/doors; aluminium enquiries Sales ki.
 - **Six questions:** Residential/commercial; location/PIN; customer role; construction stage; rough quantity; plastering/readiness.
@@ -524,7 +524,7 @@ Quantity teliyakapotey rough context adagandi. Price calculate cheyyakandi.
 4. **Aluminium:** Offered; details/pricing/timelines anni Sales dwara.
 5. **Jubilee Hills:** Source lo opening soon; date Sales share chestundi. Current status verify.
 6. **Machinery:** Source lo European mariyu Turkish CNC machinery rendu mention chesaru; current approved statement use cheyyandi.
-7. **Delivery:** 3–4 weeks minimum; brochure 14-day claim use cheyyakandi.
+7. **Delivery source conflict:** Source SOP 3–4 weeks minimum ani cheptundi; brochure 14-day claim ni reject chestundi. Ee rendu customer promise ga cheppakandi; current written timeline Sales/Operations confirm chestundi.
 8. **Starting rate standard spec:** Source white, clear glass, 60 Series include chestundi ani cheptundi; current quotation template verify.
 9. **Unapproved brochure claims:** RERA-aligned 5-year warranty mariyu Karnataka focus market laanti conflicting claims current approval lekunda use cheyyakandi.
 10. **Green Fortune:** IndiFrame nunchi separate partner fabricator kaadu; same company profile brand. External fabricator local route unte exact relationship mariyu service scope verify chesi cheppandi.
