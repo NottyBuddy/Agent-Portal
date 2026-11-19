@@ -83,3 +83,40 @@ test('agent-visible leaderboard returns only approved ranking fields', async () 
   assert.equal(Object.hasOwn(projected[0], 'sim_score'), false);
   assert.equal(Object.hasOwn(projected[0], 'talk_minutes'), false);
 });
+
+
+test('simulation history enforces alternating roles, mode readiness and transcript size', async () => {
+  const { validateSimulationHistory } = await import('../api/_lib/simulation.js');
+  const valid = [{ role: 'user', content: 'I need a quote for my home.' }];
+  assert.equal(validateSimulationHistory(valid, 'turn').history.length, 1);
+  assert.match(validateSimulationHistory(valid, 'evaluate').error, /not ready/);
+  assert.match(validateSimulationHistory([{ role: 'assistant', content: 'Hello, how can I help?' }], 'turn').error, /sequence/);
+  assert.match(validateSimulationHistory([{ role: 'user', content: 'x'.repeat(1801) }], 'turn').error, /1,800/);
+  const long = Array.from({ length: 7 }, (_, i) => ({
+    role: i % 2 ? 'assistant' : 'user', content: 'x'.repeat(1800)
+  }));
+  assert.match(validateSimulationHistory(long, 'turn').error, /too long/);
+});
+
+test('simulation output validators reject oversized or malformed AI responses', async () => {
+  const { validateCustomerReply, validateSimulationEvaluation } = await import('../api/_lib/simulation.js');
+  assert.equal(validateCustomerReply({ customer_reply: 'Please explain the quotation.' }), 'Please explain the quotation.');
+  assert.equal(validateCustomerReply({ customer_reply: 'word '.repeat(91) }), null);
+  assert.equal(validateCustomerReply({ customer_reply: 'x'.repeat(901) }), null);
+
+  const criteria = [
+    { name: 'Empathy and call control', score: 18, max: 20, feedback: 'Good control.' },
+    { name: 'Discovery and clarification', score: 18, max: 20, feedback: 'Good discovery.' },
+    { name: 'Accuracy and policy compliance', score: 27, max: 30, feedback: 'No unsupported claims.' },
+    { name: 'Objection handling', score: 13, max: 15, feedback: 'Handled objection.' },
+    { name: 'Clear next step and closure', score: 13, max: 15, feedback: 'Clear next step.' }
+  ];
+  const evaluation = {
+    score: 89, criteria, strengths: ['Clear language'], improvements: ['Probe timeline'],
+    training_recommendation: 'Practise project timeline discovery.', policy_risks: []
+  };
+  assert.equal(validateSimulationEvaluation(evaluation).score, 89);
+  assert.equal(validateSimulationEvaluation({ ...evaluation, score: '89' }), null);
+  assert.equal(validateSimulationEvaluation({ ...evaluation, criteria: criteria.map((x, i) => i ? x : { ...x, score: 99 }) }), null);
+  assert.equal(validateSimulationEvaluation({ ...evaluation, strengths: ['x'.repeat(241)] }), null);
+});
